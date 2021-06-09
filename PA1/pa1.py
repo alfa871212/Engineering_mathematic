@@ -92,3 +92,22 @@ df["Err_Euler"] = pd.Series(euler_err)
 df["Err_modEuler"] = pd.Series(mod_euler_err)
 df["Err_RK4"] = pd.Series(rk4_err)
 df.to_csv("stat.csv")
+
+
+plt.plot(x, y_euler, "r.-", x, y_scipy, "b.-")
+plt.legend(["Euler", "Scipy"])
+plt.grid(True)
+plt.savefig("Euler_res.png")
+plt.close()
+
+plt.plot(x, y_mod_euler, "r.-", x, y_scipy, "b.-")
+plt.legend(["modEuler", "Scipy"])
+plt.grid(True)
+plt.savefig("modEuler_res.png")
+plt.close()
+
+plt.plot(x, y_rk4, "r.-", x, y_scipy, "b.-")
+plt.legend(["rk4", "Scipy"])
+plt.grid(True)
+plt.savefig("rk4_res.png")
+plt.close()
